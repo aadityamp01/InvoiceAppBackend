@@ -7,6 +7,12 @@ namespace BuggyApp.Controllers
     [Route("api/[controller]")]
     public class DataController : ControllerBase
     {
+        private readonly string _connectionString;
+        public DataController(IConfiguration config)
+        {
+            _connectionString = config.GetConnectionString("DefaultConnection");
+        }
+
         [HttpGet]
         public IActionResult GetData()
         {

@@ -15,7 +15,7 @@ namespace BuggyApp.Controllers
             {
                 return Ok(new { message = "Data fetched" });
             }
-            return BadRequest("No data");
+            return NotFound("No data");
         }
     }
 }
